@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap');
+
+/* variables */
+:root{
+    --fros-blue-color: #149279;
+    --light-blue-color: #1abc9c;
+    --dark-color: #202020;
+    --light-gray: #dedede;
+    --light-color: #fff;
+    --poppins-font: 'poppins', sans-serif;
+    --transition: all 0.3s ease-in-out;
+    --box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2)!important;
+}
+
+
+/* Some resets */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+section{
+    padding-top: 200px;
+    padding-bottom: 50px;
+}
+
+
+.my-services{
+    background-color: var(--fros-blue-color);
+    background-image: url(img/services.jpg);
+    background-size: cover;
+    background-blend-mode: multiply;
+    color:var(--light-color);
+    text-align: center;
+}
+
+.section__title--services{
+    color: var(--clr-accent);
+    position: relative;
+}
+
+.section__title--services::after{
+    content:'';
+    display: block;
+    width: 3em;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    opacity: 0.25;
+}
+
+.services{
+    margin-bottom: 3em;
+}
+.service{
+    max-width: 500px;
+    margin: 0 auto;
+    padding-right: 25px;
+}
+
+@media (min-width:800px){
+    .services{
+        display: flex;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .service + .service {
+        margin-left: 2em;
+    }
+}
+
+
+.about-me{
+    max-width: 1000px;
+    margin: 0 auto;
+
+}
+
+.about-me__img{
+    box-shadow: var(--bs);
+}
+@media (min-width: 600px){
+    .about-me{
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-areas:
+            "title img"
+            "subtitle img"
+            "text img";
+        grid-column-gap: 2em;
+    }
+
+    .section__title--about{
+        grid-area: title;
+    }
+
+    .section__subtitle--about{
+        grid-column: 1 / -1;
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        width: calc(100% + 4em);
+        padding-left: 1em;
+        padding-right: calc(200px + 4em);
+    }
+
+    .about-me__img{
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+    }
+}
+
